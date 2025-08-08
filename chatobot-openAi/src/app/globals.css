@@ -1,0 +1,71 @@
+html, body {
+  background-color: #000000;
+  color: white;
+  font-family: 'Open Sans', sans-serif;
+}
+
+/* Titulos */
+h1 {
+  font-size: 1.875rem; /* text-3xl */
+  line-height: 2.25rem;
+  font-weight: 700; /* font-bold */
+  margin-bottom: 1rem; /* mb-4 */
+}
+
+/* Párrafos */
+p {
+  margin-bottom: 1rem; /* mb-4 */
+}
+
+/* Listas */
+ul {
+  list-style-type: disc; /* list-disc */
+  list-style-position: inside; /* list-inside */
+}
+
+/* Texto fuerte */
+strong {
+  font-weight: 700; /* font-bold */
+  color: #818cf8; /* text-indigo-400 */
+}
+
+/* Texto en cursiva */
+em {
+  font-style: italic;
+  color: #ec4899; /* text-pink-500 */
+}
+
+/* Botón primario */
+.btn-primary {
+  background-color: #6366f1; /* bg-indigo-500 */
+  color: white; /* text-white */
+  font-weight: 700; /* font-bold */
+  padding: 0.5rem 1rem; /* py-2 px-4 */
+  border-radius: 0.75rem; /* rounded-xl */
+  transition: all 0.2s ease-in-out; /* transition-all duration-200 ease-in-out */
+}
+
+.btn-primary:hover {
+  background-color: #4338ca; /* hover:bg-indigo-700 */
+}
+
+.btn-primary:disabled {
+  background-color: #6366f1; /* bg-indigo-500 */
+  color: white;
+  font-weight: 700;
+  padding: 0.5rem 1rem;
+  border-radius: 0.75rem;
+  opacity: 0.5; /* opacity-50 */
+  cursor: not-allowed; /* cursor-not-allowed */
+}
+
+
+/* Animaciones */
+.fade-in {
+  animation: fadeIn 0.3s;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
