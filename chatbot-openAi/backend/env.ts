@@ -9,4 +9,5 @@ module.exports = {
   DB_PORT: process.env.DB_PORT,
   DATABASE_URL: process.env.DATABASE_URL,
   JWT_SECRET: process.env.JWT_SECRET,
+  OPENAI_API_KEY: process.env.OPENAI_API_KEY //https://platform.openai.com/api-keys
 };
