@@ -1,5 +1,5 @@
-import React from 'react'
-import { TypingLoader, GptMessage, MyMessage, TextMessageBox } from '@/components';
+import React, { useState } from 'react'
+import { TypingLoader, OpenAIMessage, MyMessage, TextMessageBox } from '@/components';
 import { Box, Flex, Grid } from '@chakra-ui/react';
 
 interface IMessage {
@@ -15,7 +15,7 @@ const OrthographyPage = () => {
   const handlePost = async (text:string) => {
 
     setIsLoading(true);
-    setMessages((prev) => [...prev, {text:text, isOpenAI:false}]);
+    setMessages((prev:IMessage[]) => [...prev, {text:text, isOpenAI:false}]);
 
     //TODO: UseCase
 
@@ -28,7 +28,7 @@ const OrthographyPage = () => {
     <Flex direction='column' flex='1 1 auto' flexShrink='0' borderRadius='20px' bgColor='rgba(255, 255, 255, 0.05)' h='100%' p='1rem'>
       <Flex direction='column' h='100%' mb='1rem' overflowX='auto' overflow='scroll'>
         <Grid gridTemplateColumns={12} gapY={2}>
-          <GptMessage text='Hola, puedes escribir tu texto en español, y te ayudo con las traducciones' />
+          <OpenAIMessage text='Hola, puedes escribir tu texto en español, y te ayudo con las traducciones' />
           {
             messages?.map( (message, index) => (
               message.isOpenAI
