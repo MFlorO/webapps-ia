@@ -11,11 +11,13 @@ export const orthographyCheckUseCase = async( openai: OpenAI,  options: Options 
 
 
   const completion = await openai.chat.completions.create({
-    
+
     messages: [
       { 
         role: "system", 
         content: `
+        Cuando sea la primera vez que escriba la persona siempre debes saludar y presentarte con el nombre de "Wally.
+        
         Te serán proveídos textos en español con posibles errores ortográficos y gramaticales,
         Las palabras usadas deben de existir en el diccionario de la Real Academia Española,
         Debes de responder en formato JSON, 
@@ -38,7 +40,7 @@ export const orthographyCheckUseCase = async( openai: OpenAI,  options: Options 
         content: prompt,
       }
     ],
-    model: "gpt-3.5-turbo-1106",
+    model: "gpt-4o",
     temperature: 0.3,
     max_tokens: 150,
     response_format: {

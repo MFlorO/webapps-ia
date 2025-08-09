@@ -1,10 +1,13 @@
 
-export class HttpError extends Error {
-  statusCode: number;
 
-  constructor(message: string, statusCode = 400) {
+class HttpError extends Error {
+  status: number;
+  constructor(status:number, message:string) {
     super(message);
-    this.statusCode = statusCode;
-    this.name = 'HttpError';
+    this.status = status;
+    this.name = this.constructor.name;
+    Error.captureStackTrace(this, this.constructor);
   }
 }
+
+module.exports = HttpError;
