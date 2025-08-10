@@ -28,6 +28,14 @@ Este repositorio central enlaza a distintos subrepositorios, cada uno con una ap
 - Leé su README.md específico para ver instrucciones de instalación y uso.
 - Si querés clonar todos los proyectos juntos, podés usar git clone en cada uno individualmente o configurar un monorepo con submódulos (opcional).
 
+## ¿Cómo levantar cada repositorio?
+1. Levantar el backend: 
+    - npm i
+    - ```npm run server```
+2. Levantar el frontend: 
+    - npm i
+    - ```npm run dev```
+
 ## 🤝 Contribuciones
 ¡Las contribuciones son bienvenidas! Si querés sumar un proyecto de IA al repositorio, podés abrir un issue o un pull request. También podés crear un nuevo subrepositorio siguiendo la estructura propuesta.
 
