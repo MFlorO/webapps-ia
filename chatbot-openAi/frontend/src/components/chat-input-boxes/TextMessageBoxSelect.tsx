@@ -1,5 +1,5 @@
+"use client";
 import { FormEvent, useState } from 'react';
-
 
 interface Props {
   onSendMessage: (message: string, selectedOption: string )=>void;
@@ -15,7 +15,7 @@ interface Option {
 
 
 
-export const TextMessageBoxSelect = ({ onSendMessage, placeholder, disableCorrections = false, options }: Props) => {
+const TextMessageBoxSelect = ({ onSendMessage, placeholder, disableCorrections = false, options }: Props) => {
 
   const [message, setMessage] = useState('');
   const [selectedOption, setSelectedOption] = useState<string>('');
@@ -85,3 +85,5 @@ export const TextMessageBoxSelect = ({ onSendMessage, placeholder, disableCorrec
     </form>
   )
 }
+
+export default TextMessageBoxSelect;

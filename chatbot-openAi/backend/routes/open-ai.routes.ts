@@ -1,9 +1,9 @@
 import { Router } from 'express';
 const router = Router();
-import { OpenAIController } from '../controllers/open-ai.controller';
+import { AIController } from '../controllers/ai.controller';
 import { validate } from '../middleware/validate';
 import { orthographyCheckSchema } from '../validators/open-ai.validator';
 
-router.post('/', validate(orthographyCheckSchema), OpenAIController.orthographyCheck);
+router.post('/', validate(orthographyCheckSchema), AIController.orthographyCheck);
 
 module.exports = router;

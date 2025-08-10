@@ -13,13 +13,17 @@
     "server": "nodemon --watch './**/*.ts' --exec npx ts-node app.ts"
   },
   "dependencies": {
+    "@anthropic-ai/sdk": "^0.59.0",
+    "@google/genai": "^1.13.0",
     "@prisma/client": "^6.13.0",
     "cookie-parser": "^1.4.7",
     "cors": "^2.8.5",
     "dotenv": "^17.1.0",
     "exceljs": "^4.4.0",
     "express": "^5.1.0",
+    "install": "^0.13.0",
     "morgan": "^1.10.0",
+    "npm": "^11.5.2",
     "openai": "^5.12.2",
     "prisma": "^6.11.1",
     "swagger-jsdoc": "^6.2.8",

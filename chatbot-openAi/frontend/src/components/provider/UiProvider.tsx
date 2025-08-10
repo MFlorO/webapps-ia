@@ -8,10 +8,10 @@ interface Props {
 
 export default function UiProvider({ children }:Props) {
   return (
-    <Flex direction="row" mt="7">
+    <Flex direction="row" mt="6">
       <Sidebar />
 
-      <Box flex='1' p="5" h="calc(100vh - 50px)" mx={{ base: '3', sm: '20' }} bg="whiteAlpha.200" borderRadius="3xl">
+      <Box w='100%' p="5" h="calc(100vh - 50px)" mx={{ base: '3', sm: '10', md:'15' }} bg="whiteAlpha.200" borderRadius="3xl">
         <Flex h="full" flexDirection="row">
           <Flex direction="column" flex="1" h="full" p="1">
             {children}

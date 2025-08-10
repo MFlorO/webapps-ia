@@ -1,7 +1,13 @@
-import { IMenuItem } from '../../../interfaces/ui.interface';
-import { FaCodeCompare, FaComments, FaImage, FaLanguage, FaPodcast, FaSpellCheck, FaUser, FaWandMagicSparkles, FaWater } from "react-icons/fa6";
+import { IMenuItem } from "@/interfaces";
+import { FaCodeCompare, FaComments, FaImage, FaLanguage, FaPodcast, FaSpellCheck, FaUser, FaWandMagicSparkles, FaWater, FaRocketchat  } from "react-icons/fa6";
 
 export const menuRoutes: IMenuItem[] = [
+    {
+    to: "/chatbot-gemini",
+    title: "Chat Bot",
+    description: "Chatea con Gemini",
+    icon: <FaRocketchat />
+  },
   {
     to: "/orthography",
     title: "Ortografía",

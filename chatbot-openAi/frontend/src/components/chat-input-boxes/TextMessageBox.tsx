@@ -13,35 +13,34 @@ const TextMessageBox = ({ onSendMessage, placeholder, disableCorrections=false }
 
     const [message, setMessage] = useState('')
 
-    const handleSendMessage = (event: FormEvent<HTMLFormElement>) => {
+    const handleOnSubmit = (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault();
+        onSendMessage(message);
+        console.log('messaage: ', message)
         setMessage('')
     }
 
   return (
     <form 
-    onSubmit={handleSendMessage} 
-    style={{display:'flex', flexDirection:'row', alignItems:'center', height:'20px', 
-        borderRadius:'70px', backgroundColor:'white', width:'100%', paddingLeft:'1rem', paddingRight:'1rem'
+    onSubmit={handleOnSubmit} 
+    style={{
+        display:'flex', flexDirection:'row', alignItems:'center', height:'3rem', justifyContent:'space-between',
+        borderRadius:'0.75rem', backgroundColor:'white', width:'100%', paddingLeft:'0.5rem', paddingRight:'0.5rem'
     }}
     >
-        <Flex flexGrow='revert'>
-            <Flex pos='relative' w='100%'>
-                <Input 
-                    type='text' name='message' placeholder={placeholder} autoFocus 
-                    autoComplete={disableCorrections ? 'off' : 'on'} autoCorrect={disableCorrections ? 'off' : 'on'} spellCheck={disableCorrections ? 'true' : 'false'}
-                    display='flex' w='100%' borderRadius='xl' color='gray.800' pl='4' h='10%'  
-                    _focus={{outline:'none', border:'1px solid indigo.300' }}
-                />
-            </Flex>
+        <Flex w='70%' h='100%'>
+            <Input 
+                type='text' name='message' value={message} placeholder={placeholder} onChange={(e) => setMessage( e.target.value )}
+                autoFocus autoComplete={disableCorrections ? 'off' : 'on'} autoCorrect={disableCorrections ? 'off' : 'on'} spellCheck={disableCorrections ? 'true' : 'false'}
+                display='flex' w='100%' h='100%' borderRadius='xl' color='gray.800' pl='4' border='none'
+                _focus={{outline:'none', border:'1px solid indigo.300' }}   
+            />
         </Flex>
 
-        <Flex ml='4'>
-            <Button className='btn-primary'>
-                <span className='mr-2'>Enviar</span>
-                <FaRegPaperPlane />
-            </Button>   
-        </Flex>
+        <Button w='10%' className='btn-primary' type='submit'>
+            <span className='mr-1'>Enviar</span>
+            <FaRegPaperPlane />
+        </Button>   
 
     </form>
   )

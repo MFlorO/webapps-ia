@@ -1,5 +1,6 @@
-import { Box, Button, Flex, Input, Text } from '@chakra-ui/react';
+"use client";
 import { FormEvent, useRef, useState } from 'react';
+import { Box, Button, Flex, Input, Text } from '@chakra-ui/react';
 import { FaRegPaperPlane } from "react-icons/fa6";
 
 interface Props {
@@ -10,7 +11,7 @@ interface Props {
 }
 
 
-export const TextMessageBoxFile = ({ onSendMessage, placeholder, disableCorrections = false, accept }: Props) => {
+const TextMessageBoxFile = ({ onSendMessage, placeholder, disableCorrections = false, accept }: Props) => {
 
   const [message, setMessage] = useState('');
 
@@ -92,3 +93,5 @@ export const TextMessageBoxFile = ({ onSendMessage, placeholder, disableCorrecti
     </form>
   )
 }
+
+export default TextMessageBoxFile;
